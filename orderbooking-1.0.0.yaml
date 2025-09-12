@@ -1,0 +1,51 @@
+swagger: '2.0'
+info:
+  title: orderbooking
+  x-ibm-name: orderbooking
+  version: 1.0.0
+  termsOfService: https://partner.booking.com/en-gb/terms-conditions
+x-ibm-configuration:
+  cors:
+    enabled: true
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  servers:
+    - url: https://api.ap-southeast-a.apiconnect.ibmappdomain.cloud/api-connect-d4/developer/orderbooking
+      description: ''
+      type:
+        - production
+        - development
+basePath: /api-connect-d4/developer/orderbooking
+paths:
+  /Order:
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    parameters:
+      - name: id
+        required: true
+        in: header
+        type: number
+securityDefinitions:
+  clientID:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  client_secret:
+    type: apiKey
+    x-key-type: client_secret
+    name: X-IBM-Client-Secret
+    in: header
+security:
+  - clientID: []
+    client_secret: []
+schemes:
+  - https
+host: api.ap-southeast-a.apiconnect.ibmappdomain.cloud
