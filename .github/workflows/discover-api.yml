@@ -6,7 +6,7 @@ env:
   API_HOST: ap-southeast-a.apiconnect.automation.ibm.com
   PLATFORM_API_PREFIX: platform-api
   PROVIDER_ORG: api-connect-d4
-  API_FILES: orderbooking-1.0.0.yaml  # Update this path to your actual API files
+  API_FILES: orderbooking-1.0.0.yaml  # Adjust this as needed
 
 jobs:
   run-discovery:
@@ -26,11 +26,8 @@ jobs:
         platform_api_prefix: ${{ env.PLATFORM_API_PREFIX }}
         provider_org: ${{ env.PROVIDER_ORG }}
         api_key: ${{ secrets.APICKEY }}
-        if: env.API_FILES
         api_files: ${{ env.API_FILES }}
-        else if: env.API_FOLDERS
-        api_folders: ${{ env.API_FOLDERS }}
-        resync_check: ${{ true }}
+        resync_check: true
         git_diff: ${{ steps.difference-output.outputs.action_updates }}
 
     - name: Display the action-result
