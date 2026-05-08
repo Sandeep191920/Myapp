@@ -1,0 +1,137 @@
+TypeScript:
+===========
+
+Open Source tool ==> It is developed by microsoft.
+
+we can develop using both server side and client side.
+
+for server side we will use node.js.
+
+for client side we will use Angular or React.js.
+
+Typescript is a programming language.
+
+Typescript follows the oops: 
+================================
+classes & objects
+
+encapsulation
+
+inheritence
+
+polymorpishm
+
+abstraction
+
+Typescript is also called as the superset of javascript or Advanced javascript.
+
+The extension is .ts extension.
+
+Visual studio code is suggestable ide to develop typescript code.
+
+Browser unable to understand typescript.
+
+so , as Typescript developer we must convert javascript to equvilent javascript.
+
+Conversion of typescript to equalent javascript called as "Transpilation".
+
+tsc stands for Typescript compiler.
+
+Typescript installation is command based installation.
+
+Typescript installation depends of "npm".
+
+npm stands for node packaging manager.
+
+Installation of typescript:
+============================
+
+Download and install node js
+
+Download and install visual studio code.
+
+Install typescript
+
+	>>	npm install -g typescript
+	
+To know the version of the typescript
+
+tsc --version
+
+
+Once we compile the ts code after compilation it will converts the code into js
+
+	tsc demo.ts
+	
+	then we will get demo.js
+	
+	if we want to run this then we will use command node demo.js.
+	
+	
+=======================================
+
+Variables:
+===========
+
+Variables are used to store the data
+
+We can declare variables in 3 ways
+
+1)var
+2)let
+3)const
+
+let and const introduced in ES6 version.
+
+
+variables declare should contain a-z , A-Z, 0-9, $ And _
+
+Variables declaration should not start with digits/Numbers
+
+
+Typescript support the following datatypes.
+
+1)string
+2)number
+3)boolean
+4)any
+5)never
+6)Array
+7)Object
+8)Tuples
+9)type
+
+Syntax 
+**********
+
+var/let/const variablename:datatype = value;
+
+ex var msg:string = "welcome to typescript variables";
+
+//string
+
+//Collection of characters is called string.
+
+1)""
+2)''
+3)``(Backtick)
+//`` is used to define paragraphs.
+//`` is used in "ES6" Version.
+
+
+==================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
