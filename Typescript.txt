@@ -31,7 +31,7 @@ Visual studio code is suggestable ide to develop typescript code.
 
 Browser unable to understand typescript.
 
-so , as Typescript developer we must convert javascript to equvilent javascript.
+so , as Typescript developer we must convert typescript to equvilent javascript.
 
 Conversion of typescript to equalent javascript called as "Transpilation".
 
@@ -121,6 +121,561 @@ ex var msg:string = "welcome to typescript variables";
 
 ==================================================
 
+
+Datatypes are of two types:
+===========================
+
+Primitive Data types
+	String
+	Numbers
+	Boolean
+	undefined
+	null
+	never
+	unknown
+	void
+	
+2)Special datatype
+	any
+	
+3)User defined datatypes
+
+	class
+	function
+	tuple
+	enum
+	interfaces
+	Arrays
+	
+	
+Functions:
+===========================
+Particular "Business" logic called as function.
+functions are used to "reuse" the business logic
+
+1)named functions
+2)anonymous function
+3)arrow function
+
+
+named functions:
+
+**************************
+
+The function with user defined name called as named function.
+
+
+syntax
+*******
+
+function definition
+
+function functionname(param1:datatype,param2:datatype,param3:datatype,.....param n:datatype):returntype{
+
+			//Business Logic
+
+}
+
+call the function
+
+functionname(arg1,arg2,arg3)
+
+
+
+ex:
+function function_name(...param1:any):void{
+	console.log(param1);
+}
+
+functino_name();
+
+
+
+oops principle:
+
+====================
+class
+object
+inheritence
+polymorpishm
+abstraction
+encapsulation
+
+class:collection of variables and functions called as class.
+
+or
+
+Encapsulation of variables and functions called as class.
+
+we can create classes using "class" keyword.
+
+we can create object to the class by using "new" keyword
+
+we will refer current class members with the help of "This" keyword.
+
+typescript supports the 3 modifiers.
+
+	public
+	
+	private
+	
+	protected
+	
+	public modifier recommended to functions.
+	
+	private modifier recommended to variables
+	
+	
+	class class_one{
+
+    var_one:string = "hello";
+
+    func_one():string{
+        return "welcome";
+    }
+
+}
+
+let obj1:class_one = new class_one();
+console.log(obj1.var_one,obj1.func_one());
+
+
+**********If we won't provide any modifier default it will takes public.
+
+ex:2
+
+
+class class_one{
+
+    private var_one:string = "hello";
+
+    public func_one():string{
+
+    return this.var_one;
+}
+}
+
+let obj1:class_one = new class_one;
+
+console.log(obj1.func_one());
+
+//hello output
+
+
+=========================================
+
+class class_one{
+
+    sub_one:string;
+    sub_two:string;
+    sub_three:string;
+
+    constructor(){ //zero arg constructor
+
+        this.sub_one="sravs";
+        this.sub_two="sandy";
+        this.sub_three="sravani";
+    }
+
+}
+
+let obj1:class_one = new class_one();
+console.log(obj1.sub_one,obj1.sub_two,obj1.sub_three);
+
+//Here we have created three variables those are intialized with the help of constructor.
+
+
+
+parameterized constructor:
+
+==============================
+
+class class_one{
+
+    sub_one:string;
+    sub_two:string;
+    sub_three:string;
+
+    constructor(arg1:string,arg2:string,arg3:string){
+
+        this.sub_one = arg1;
+        this.sub_two = arg2;
+        this.sub_three=arg3;
+    }
+}
+
+let obj1:class_one= new class_one("surya","sandy","sravs");
+
+let obj2:class_one = new class_one("sravs","surya","sandy");
+
+console.log(obj1.sub_one,obj1.sub_two,obj1.sub_three);
+
+
+===================================================================
+
+class class_two{
+
+    private var_one:any;
+
+    private var_two:any;
+
+    private var_three:any;
+
+    constructor(arg1:any,arg2:any,arg3:any){
+        this.var_one = arg1;
+        this.var_two = arg2;
+        this.var_three = arg3;
+    }
+
+    public fun_one():any{
+
+        return this.var_one;
+    }
+    public fun_two():any{
+        return this.var_two;
+    }
+
+    public fun_three():any{
+
+        return this.var_three;
+    }
+
+}
+
+let obj1:class_two = new class_two("sandy","surya","sandeep");
+let res1=obj1.fun_one();
+let res2 = obj1.fun_two();
+let res3 = obj1.fun_three();
+
+console.log(res1,res2);
+
+
+By using the above example i have create the three variabes which are not intialized and later with the help of constructor i have intialized it and created the three functions and return that element.
+
+
+We can access public arguments of constructor with class "objects".
+
+class class_one{
+    constructor(public arg1:any){
+
+    }
+
+}
+
+let obj1:class_one = new class_one("sravs");
+console.log(obj1.arg1);
+
+
+Inheritence:
+=============
+
+Getting the data from parent class to child class called as inheritence.
+
+we will implement inheritence with the help of the extends keyword.
+
+single level inheritence
+multi level inheritence
+multiple inheritence
+Hirearichal inheritence
+Hybrid inheritence
+
+single leve1 inheritence:
+=========================
+
+class Parent{
+    var_one:string = "hello";
+}
+
+class Child extends Parent{
+
+    var_two:string = "hello";
+    var_three:string ="hai"
+
+}
+
+let object:Child= new Child();
+console.log(object.var_one,object.var_two,object.var_three);
+
+let p:Child = new Child();
+
+console.log(p.var_one,p.var_two,p.var_three);
+
+let c:Parent = new Child();
+console.log(c.var_one);
+
+let p1:Child = new Parent();
+console.log(p1.var_one,p1.var_two,p1.var_three);//child class reference unable to hold parent class object.
+
+
+This is single level inheritence.
+
+
+Multilevel Inheritence:
+=======================
+
+parent ->child -> sub child
+
+===========================================================
+
+class Parentmulti{
+    fun_one():string{
+        return "This is parent class";
+    }
+}
+
+class Child1 extends Parentmulti{
+
+    fun_two():string{
+        return "This is child class";
+    }
+}
+
+class subchild1 extends Child1{
+
+    fun_three():string{
+        return "This is subchild class";
+    }
+}
+
+let fu:subchild1 = new subchild1();
+console.log(fu.fun_one(),fu.fun_two(),fu.fun_three());
+
+let su:Child1 = new Child1();
+console.log(su.fun_one(),su.fun_two());
+
+let pa:Parentmulti = new Parentmulti();
+console.log(pa.fun_one());
+
+
+In multilevel inheritence we have only one parent and one child and one sub child.
+
+
+*********************************************************************************
+
+multiple parents:
+==================
+
+Here we have multiple parents with single child
+
+class Parent1{
+    funone():void{
+        console.log("First parent");
+    }
+}
+
+class Parent2{
+
+    funtwo():void{
+        console.log("second parent")
+    }
+}
+
+class Childone extends Parent1,Parent2{
+
+}
+
+//multiple inheritence not supported by the typescript.
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Hirearichal inheritence: Single parent contain multiple childs.
+
+
+class HierParent{
+
+    var_one:string = "Sravs";
+}
+
+class Hierchild1 extends HierParent{
+    
+    var_two: string="Hello";
+}
+
+class Hierchild2 extends HierParent{
+    var_two:string="sravani";
+}
+
+class Hierchild3 extends HierParent{
+    var_two:string = "sandy";
+}
+
+let cobj:Hierchild1 = new Hierchild1();
+console.log(cobj.var_one,cobj.var_two)
+
+let aobj:Hierchild2 = new Hierchild2();
+console.log(aobj.var_one,aobj.var_two);
+
+let bobj:Hierchild3 = new Hierchild3();
+console.log(bobj.var_one,bobj.var_two);
+
+
+Hybrid Inheritence:
+===================
+
+combination of more than one inheritence type.
+
+class Parent{}
+class Child1 extends Parent{}
+class Child2 extends Parent{}
+class Subchild extends Child1, Child2{}
+
+//note Hybrid inheritence is not supported by typescript.
+
+
+
+*********************************************************************
+
+Interfaces:
+====================
+
+Whenever we know only declarations but we don't know the implementations then we will chose interfaces.
+
+	we will create interfaces with "interface" keyword
+	
+	implementations provided by either child classes or json.
+	
+	child classes provides implementations with the help of implements keyword.
+	
+	
+	
+
+	/*interface interface1{
+
+		var_one:string;
+	}
+
+	class Class_one implements interface1{
+
+		var_one: string = "Welcome to interfaces";
+	}
+
+	let obj:Class_one = new Class_one();
+	console.log(obj.var_one);
+
+	*/
+
+
+ it is through the json 
+ 
+	interface inter1{
+
+		var_one:string;
+	}
+
+	let obj:inter1={
+
+		var_one : "surya"
+	};
+
+	console.log(obj.var_one);
+	
+	
+	
+	multiple inheritence
+	===================
+	
+	
+	interface inter1{
+    fun_one():number
+}
+
+interface inter2{
+    fun_two():number
+}
+interface inter3 extends inter1,inter2{
+    fun_three():number
+}
+
+let obj:inter3 = {
+    fun_one:():number=>{
+        return 100
+   },
+    fun_two:():number=>{
+        return 200
+    },
+    fun_three:():number=>{
+        return 300
+    }
+};
+
+console.log(obj.fun_one(),obj.fun_two(),obj.fun_three())
+	
+Abstract classes:
+=================
+if we know partial implementations then we will choose abstract classes.
+
+Abstract is the keyword used to create the abstract classes.
+
+Implementations provided by child classes.
+
+Example:
+
+			abstract class Class_one{
+
+				fun_one():string{
+
+					return "function one";
+				}
+
+				abstract fun_two():string;
+
+			}
+
+			abstract class Class_two extends Class_one{
+
+				fun_two(): string {
+					return "function_two"
+				}
+
+			   abstract fun_three():string;
+			}
+
+			class Class3 extends Class_two{
+
+				fun_three(): string {
+					return "sravs";
+				}
+			}
+
+			let obj:Class3 = new Class3();
+
+			console.log(obj.fun_one(),obj.fun_two(),obj.fun_three());
+			
+Note: We can't create object to the abstract classes as well as interfaces also.
+
+	interface inter1{
+    fun_one():any;
+}
+
+abstract class Classone implements inter1{
+    fun_one():any {
+        return "sravs";
+    }
+
+   abstract fun_two():any;
+}
+
+class classtwo extends Classone{
+
+    fun_two():any {
+        return "sravani";
+    }
+}
+
+let obj:classtwo = new classtwo();
+
+console.log(obj.fun_one(), obj.fun_two());
 
 
 
